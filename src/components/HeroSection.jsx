@@ -86,12 +86,12 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import heroBeans from "../assets/hero-beans.png";
 import Button from "./ui/Button";
 import Badge from "./ui/Badge";
-
+ 
 const textVariants = {
     hidden: {},
     visible: { transition: { staggerChildren: 0.12 } }
 };
-
+ 
 const wordVariant = {
     hidden: { opacity: 0, y: 60, rotateX: -40 },
     visible: {
@@ -101,27 +101,26 @@ const wordVariant = {
         transition: { duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }
     }
 };
-
+ 
 export default function HeroSection() {
     const { scrollY } = useScroll();
     const imgScale = useTransform(scrollY, [0, 600], [1.35, 0.9]);
     const imgOpacity = useTransform(scrollY, [0, 500], [1, 0]);
     const imgY = useTransform(scrollY, [0, 600], [0, 100]);
-
+ 
     return (
         <>
-            {/* this is how you comment in JSX-react */}
-            {/* Left - Text */}
+            {/* LEFT — Text */}
             <div id="home" className="hero-text-column">
                 <motion.div
-                    inital={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.1 }}>
                     <Badge variant="outline" className="mb-5">
-                        Premium Coffee Beans - Roasted fresh Daily
+                        ✦ Premium Coffee Beans — Roasted Fresh Daily
                     </Badge>
                 </motion.div>
-
+ 
                 <motion.h1
                     className="h1-stack"
                     style={{ margin: 0, perspective: "600px" }}
@@ -143,23 +142,22 @@ export default function HeroSection() {
                         BREWING
                     </motion.span>
                 </motion.h1>
-
+ 
                 <motion.p
                     className="lead"
                     style={{ marginTop: 18 }}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.6 }}>
-                    Farm to cup single orgin beans from Ethiopia, Columbia & beyond. Freshly roasted
-                    in small batches and shipped to your door within 48 hours.
+                    Farm-to-cup single-origin beans from Ethiopia, Colombia & beyond. Freshly
+                    roasted in small batches and shipped to your door within 48 hours.
                 </motion.p>
-
+ 
                 <motion.div
                     className="hero-actions"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.8 }}
-                    style={{}}>
+                    transition={{ duration: 0.5, delay: 0.8 }}>
                     <Button
                         variant="accent"
                         size="lg"
@@ -167,9 +165,8 @@ export default function HeroSection() {
                         onClick={() =>
                             document.getElementById("shop")?.scrollIntoView({ behavior: "smooth" })
                         }>
-                        SHOP COFFEE
+                        SHOP COFFEE ☕
                     </Button>
-
                     <Button
                         variant="outline"
                         size="lg"
@@ -179,8 +176,8 @@ export default function HeroSection() {
                         OUR STORY
                     </Button>
                 </motion.div>
-
-                {/* TRUST IDICATOR */}
+ 
+                {/* Trust indicators */}
                 <motion.div
                     className="hero-trust"
                     initial={{ opacity: 0 }}
@@ -190,39 +187,39 @@ export default function HeroSection() {
                     <span className="hero-trust-divider">|</span>
                     <span>Free shipping over $50</span>
                 </motion.div>
-
-                {/* RIGHT HERO BEANS IMAGE */}
-                <div className="hero-art-container">
-                    <motion.img
-                        className="hero-art"
-                        src={heroBeans}
-                        alt="Premium coffe beans"
-                        style={{
-                            scale: imgScale,
-                            opacity: imgOpacity,
-                            y: imgY
-                        }}
-                        initial={{ opacity: 0, scale: 0.8, x: 60 }}
-                        animate={{ opacity: 1, scale: 1.35, x: 0 }}
-                        transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    />
-
-                    {/* Floating price badge */}
-                    <motion.div
-                        className="hero-floating-badge"
-                        inital={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{
-                            duration: 0.1,
-                            delay: 1.2,
-                            type: "spring",
-                            stiffness: 200
-                        }}>
-                        <span className="hero-floating-badge-label">FROM</span>
-                        <span className="hero-floating-badge-price">$14.99</span>
-                        <span className="hero-floating-badge-label">per bag</span>
-                    </motion.div>
-                </div>
+            </div>
+ 
+            {/* RIGHT — Hero beans image */}
+            <div className="hero-art-container">
+                <motion.img
+                    className="hero-art"
+                    src={heroBeans}
+                    alt="Premium coffee beans"
+                    style={{
+                        scale: imgScale,
+                        opacity: imgOpacity,
+                        y: imgY
+                    }}
+                    initial={{ opacity: 0, scale: 0.8, x: 60 }}
+                    animate={{ opacity: 1, scale: 1.35, x: 0 }}
+                    transition={{ duration: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+                />
+ 
+                {/* Floating price badge */}
+                <motion.div
+                    className="hero-floating-badge"
+                    initial={{ opacity: 0, scale: 0.5 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{
+                        duration: 0.5,
+                        delay: 1.2,
+                        type: "spring",
+                        stiffness: 200
+                    }}>
+                    <span className="hero-floating-badge-label">FROM</span>
+                    <span className="hero-floating-badge-price">$14.99</span>
+                    <span className="hero-floating-badge-label">per bag</span>
+                </motion.div>
             </div>
         </>
     );

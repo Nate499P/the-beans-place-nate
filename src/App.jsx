@@ -12,7 +12,7 @@
 // - How JSX lets you use custom components like HTML tags
 //
 // ============================================================
-
+ 
 // STEP 1: Import your section components
 // Each component lives in its own file inside ./components/
 // Use this syntax:  import ComponentName from "./components/ComponentName";
@@ -27,10 +27,9 @@
 // - FooterSection
 // - AboutSection
 // - ContactSection
-
+ 
 /* --- YOUR IMPORTS GO HERE --- */
-
-
+ 
 // STEP 2: Create and export the App component
 // Use: export default function App() { ... }
 //
@@ -52,5 +51,29 @@
 //
 // HINT: The id attributes (like id="shop") are anchor targets
 // for the navigation links in the NavBar.
-
+ 
 /* --- YOUR COMPONENT CODE GOES HERE --- */
+import HeroSection from "./components/HeroSection";
+import FooterSection from "./components/FooterSection";
+import NavBar from "./components/NavBar";
+ 
+export default function App() {
+    return (
+        <div className="app">
+            {/* NavBar */}
+            <NavBar />
+ 
+            {/* HERO */}
+            <section className="hero bg-hero">
+                <div className="hero-grid">
+                    <HeroSection />
+                </div>
+            </section>
+ 
+            {/* FOOTER */}
+            <section className="bg-footer">
+                <FooterSection />
+            </section>
+        </div>
+    );
+}
