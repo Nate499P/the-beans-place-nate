@@ -57,7 +57,8 @@ import HeroSection from "./components/HeroSection";
 import FooterSection from "./components/FooterSection";
 import NavBar from "./components/NavBar";
 import RibbonTicker from "./components/RibbonTicker";
- 
+import FeatureSection from "./components/FeaturesSection";
+
 export default function App() {
     return (
         <div className="app">
@@ -72,7 +73,12 @@ export default function App() {
             </section>
             
             <RibbonTicker/>
- 
+            
+            {/* feature / carousel */}
+            <section className="features bg-features" id="shop">
+                <FeatureSection/>
+            </section>
+            
             {/* FOOTER */}
             <section className="bg-footer">
                 <FooterSection />
