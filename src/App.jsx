@@ -57,28 +57,28 @@ import HeroSection from "./components/HeroSection";
 import FooterSection from "./components/FooterSection";
 import NavBar from "./components/NavBar";
 import RibbonTicker from "./components/RibbonTicker";
-import FeatureSection from "./components/FeaturesSection";
+import FeaturesSection from "./components/FeaturesSection";
 
 export default function App() {
     return (
         <div className="app">
             {/* NavBar */}
             <NavBar />
- 
+
             {/* HERO */}
             <section className="hero bg-hero">
                 <div className="hero-grid">
                     <HeroSection />
                 </div>
             </section>
+
+            <RibbonTicker />
             
-            <RibbonTicker/>
-            
-            {/* feature / carousel */}
+            {/* FEATURES / CAROUSEL */}
             <section className="features bg-features" id="shop">
-                <FeatureSection/>
+                <FeaturesSection />
             </section>
-            
+
             {/* FOOTER */}
             <section className="bg-footer">
                 <FooterSection />
